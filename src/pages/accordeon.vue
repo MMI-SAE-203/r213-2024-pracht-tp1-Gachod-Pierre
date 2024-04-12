@@ -1,20 +1,25 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const maVar = ref(false)
-const maVar2 = ref(0)
+const sectionOpen = ref(false)
+const sectionOpen2 = ref(0)
 </script>
 
 <template>
-  <p>la variable vaut : {{ maVar }}</p>
-  <p>la variable2 vaut : {{ maVar2 }}</p><br><br>
+  <p>la variable vaut : {{ sectionOpen }}</p>
+  <p>la variable2 vaut : {{ sectionOpen2 }}</p><br><br>
 
-  <button @click="maVar=false">Cacher</button><br>
-  <button @click="maVar=true">Montrer</button><br>
-  <button @click="maVar=!maVar">Bascule</button><br><br>
+  <button class="rounded-full border-2 border-green-600 bg-green-300 px-2 mx-3"
+    @click="sectionOpen=false">Cacher</button><br>
+  <button class="rounded-full border-2 border-green-600 bg-green-300 px-2 mx-3"
+    @click="sectionOpen=true">Montrer</button>
+  <button class="rounded-full border-2 border-green-600 bg-green-300 px-2 m-3"
+    @click="sectionOpen=!sectionOpen">Bascule</button>
 
-  <button @click="maVar2 = maVar2 === 1 ? 0 : 1">Montrer1</button>
-  <h1 v-show="maVar2 === 1" class="text-2xl">Contenu1</h1>
+  <h1 v-show="sectionOpen" class="text-2xl">Bonjour monde, je suis GEOFFF ! </h1><br><br>
 
-  <h1 v-show="maVar" class="text-2xl">Bonjour monde, je suis GEOFFF ! </h1>
+  <button class="rounded-full border-2 border-red-600 bg-red-300 px-2 mx-3 m-3"
+    @click="sectionOpen2 = sectionOpen2 === 1 ? 0 : 1">Montrer1</button>
+  <h1 v-show="sectionOpen2 === 1" class="text-2xl">Contenu1</h1>
+
 </template>
